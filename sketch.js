@@ -65,12 +65,7 @@ function draw() {
  m5.display();
  m6.display();
   s1.display();
- d1(s1,m1);
- d1(s1,m2);
- d1(s1,m3);
- d1(s1,m4);
- d1(s1,m5);
- d1(s1,m6);
+
   c1.display();
   
  
@@ -90,22 +85,3 @@ function mouseDragged(){
     }
 }
 
-function d1(lstone,lmango){
-	var collision = Matter.SAT.collides(lstone,lmango);
-	//if(collision.collided){
-	//	console.log("collided");
-	//	Matter.Body.setStatic(lmango,false);	
-	//}
-  mangoBodyPosition=lmango.body.position
-  stoneBodyPosition=lstone.body.position
-  
-  var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  //console.log(distance)
- // console.log(lmango.r+lstone.r)
-  	if(distance<=lmango.r+lstone.r)
-    {
-      //console.log(distance);
-  	  Matter.Body.setStatic(lmango.body,false);
-    }
-
-  }
